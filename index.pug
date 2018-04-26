@@ -1,0 +1,66 @@
+doctype html
+html
+    head
+    meta(charset = 'utf-8')
+    meta(name='viewport', content="initial-scale=1.0, width=device-width")
+    title Test
+    style
+        include stylesheets/styles.css
+
+    block scripts
+        script(src='js/jquery.min.js')
+        script(src='js/scripts.js')
+
+    - var lipsum =   ['Lorem ipsum dolor sit amet, consectetur adipisicing elit.','Autem possimus perspiciatis, eaque quos repudiandae modi labore sed repellat dolorum magnam praesentium expedita esse tempore saepe nulla.','Quam molestiae ipsa sapiente mollitia, nobis.', 'Facere illo pariatur necessitatibus fugit quo impedit, quae, corporis placeat recusandae dolor ipsa nobis!', 'Doloremque quisquam molestias, est laudantium vero aliquid dolorum inventore atque sint perferendis qui dolor voluptas consequuntur non.' , 'Veritatis eos similique eveniet tempora.', 'Voluptates impedit dolore eum nisi quas, velit, iste aut labore recusandae temporibus provident distinctio molestias culpa iusto!', 'Ipsam incidunt assumenda hic veritatis odio mollitia, tempora, aut quo nam quisquam officia consequatur aspernatur.'];
+    - var lipsum02 = ['Lorem ipsum dolor sit amet, consectetur adipisicing elit.','Autem possimus perspiciatis, eaque quos repudiandae modi labore sed repellat dolorum magnam praesentium expedita esse tempore saepe nulla.'];
+    - var copy =     ['Lorem ipsum dolor sit amet, consectetur adipisicing elit.'];
+
+    body
+        header.header
+            ul
+                li
+                    mixin link(href, name)
+                        a(class!=attributes.class href=href)= name
+                    +link('#menu1', 'Aside 1')(class="btn btn1")
+                li
+                    mixin link(href, name)
+                        a(class!=attributes.class href=href)= name
+                    +link('#menu2', 'Aside 2')(class="btn btn2")
+
+        div#wrapper.Grid.Grid--gutters.Grid--holly-grail
+            div.substrate
+              main.Grid-cell.main.border-aside
+                div.page-descriptors
+                    p #{lipsum02}
+                div.Grid.Grid--gutters.Grid--1of6
+                    div.Grid-cell
+                       div.content-1of2
+                           p #{lipsum}
+                           img(class="" src="images/img01.jpg")
+                           p #{lipsum}
+                           img(class="" src="images/img01.jpg")
+                           p #{lipsum}
+                           img(class="" src="images/img01.jpg")
+                           p #{lipsum}
+                           img(class="" src="images/img01.jpg")
+                    div.Grid-cell
+                       div.content-1of2.fixed02
+                           p #{lipsum02}
+
+
+              aside#mune1.Grid-cell.aside.aside-1
+                div.border-aside.border-aside1
+                    div.image01
+                        img(class="" src="images/img01.jpg")
+                    p #{lipsum}
+
+              aside#mune2.Grid-cell.aside.aside-2
+                  div.border-aside.border-aside2
+                      div.image01
+                          img(class="" src="images/img01.jpg")
+                      p #{lipsum}
+
+        footer.Grid.Grid--full
+            div.Grid-cell
+                p #{copy}
+

@@ -1,0 +1,220 @@
+/*Basic Styles */
+/* line 8, ../sass/styles.sass */
+body {
+  margin: 0;
+}
+
+/* line 10, ../sass/styles.sass */
+p {
+  line-height: 1.5;
+}
+
+/* line 12, ../sass/styles.sass */
+.Grid {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+}
+
+/* line 16, ../sass/styles.sass */
+.Grid-cell {
+  flex: 1;
+}
+
+/* line 18, ../sass/styles.sass */
+.Grid--gutters {
+  margin-left: -15px;
+}
+/* line 20, ../sass/styles.sass */
+.Grid--gutters .Grid-cell {
+  padding-left: 15px;
+}
+/* line 24, ../sass/styles.sass */
+.Grid--gutters .Grid--nested .Grid-cell:first-of-type .Demo {
+  margin-right: 1em;
+}
+
+/* line 26, ../sass/styles.sass */
+.Grid--1of6 > .Grid-cell:nth-child(2) {
+  flex: 0 0 20%;
+}
+
+/* line 28, ../sass/styles.sass */
+.fixed {
+  position: fixed !important;
+  z-index: 9999;
+}
+
+/* line 31, ../sass/styles.sass */
+.border-aside {
+  padding: 25px;
+  border: 1px solid #c2b390;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* line 35, ../sass/styles.sass */
+.sticky {
+  position: fixed;
+  z-index: 101;
+  margin-top: 50px;
+}
+
+/* line 39, ../sass/styles.sass */
+.stop {
+  position: relative;
+  z-index: 101;
+}
+
+/*********main style***** */
+/* line 44, ../sass/styles.sass */
+header {
+  background: #171717;
+  height: 40px;
+  width: 100%;
+}
+/* line 48, ../sass/styles.sass */
+header ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+}
+/* line 55, ../sass/styles.sass */
+header ul li {
+  list-style: none;
+}
+/* line 57, ../sass/styles.sass */
+header ul a {
+  color: #c2b390;
+  text-decoration: none;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+/* line 63, ../sass/styles.sass */
+#wrapper {
+  background: url("images/pages.jpg") no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+/* line 67, ../sass/styles.sass */
+#wrapper .substrate {
+  background: rgba(0, 0, 0, 0.6);
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 50px 0;
+  width: 100%;
+  min-height: 800px;
+}
+/* line 80, ../sass/styles.sass */
+#wrapper .substrate .Grid-cell .border-aside {
+  opacity: 0;
+  height: 0;
+}
+/* line 83, ../sass/styles.sass */
+#wrapper .substrate .Grid-cell .border-aside p {
+  font-size: 18px;
+}
+/* line 85, ../sass/styles.sass */
+#wrapper .substrate .Grid-cell .border-aside .image01 {
+  text-align: center;
+}
+/* line 87, ../sass/styles.sass */
+#wrapper .substrate .Grid-cell .border-aside .image01 img {
+  width: 50%;
+}
+/* line 91, ../sass/styles.sass */
+#wrapper .substrate .main .page-descriptors {
+  width: 100%;
+  clear: both;
+  overflow: hidden;
+}
+/* line 95, ../sass/styles.sass */
+#wrapper .substrate .main .page-descriptors p {
+  margin: 0;
+  width: 75%;
+  float: right;
+  font-size: 20px;
+  color: #c2b390;
+}
+
+/* line 103, ../sass/styles.sass */
+footer {
+  background: #252525;
+  color: #c2b390;
+  padding: 15px 0;
+}
+/* line 109, ../sass/styles.sass */
+footer .Grid-cell p {
+  text-align: center;
+}
+/* line 111, ../sass/styles.sass */
+footer .Grid-cell img {
+  width: 50%;
+}
+
+/* Tablet (medium) screens */
+@media (min-width: 30em) {
+  /* line 120, ../sass/styles.sass */
+  .Grid--holly-grail .aside {
+    flex: 1 calc(25% - 15px);
+  }
+
+  /* line 122, ../sass/styles.sass */
+  .Grid--1of2 > .Grid-cell {
+    flex: 0 0 50%;
+  }
+
+  /* line 124, ../sass/styles.sass */
+  .Grid--1of6 > .Grid-cell:nth-child(2) {
+    flex: 0 0 30%;
+  }
+}
+/* Large screens */
+@media (min-width: 48em) {
+  /* line 131, ../sass/styles.sass */
+  .Grid--holly-grail .main {
+    flex: 2;
+    margin-left: 15px;
+  }
+  /* line 134, ../sass/styles.sass */
+  .Grid--holly-grail .aside {
+    flex: 1;
+    position: relative;
+  }
+  /* line 137, ../sass/styles.sass */
+  .Grid--holly-grail .aside-1 {
+    order: 1;
+  }
+  /* line 139, ../sass/styles.sass */
+  .Grid--holly-grail .main {
+    order: 2;
+  }
+  /* line 141, ../sass/styles.sass */
+  .Grid--holly-grail .aside-2 {
+    order: 3;
+  }
+}
+@media (max-width: 991px) {
+  /* line 145, ../sass/styles.sass */
+  .Grid--holly-grail .main {
+    order: 4;
+  }
+}
+@media (max-width: 600px) {
+  /* line 149, ../sass/styles.sass */
+  .Grid--holly-grail .aside {
+    flex: 1 calc(100% - 15px);
+  }
+
+  /* line 151, ../sass/styles.sass */
+  #wrapper .substrate {
+    padding: 50px 15px 50px 30px;
+  }
+}

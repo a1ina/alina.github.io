@@ -1,0 +1,152 @@
+$header-background: #171717
+$primary_color :    #c2b390
+$font_size:         12px
+$gutter:            15px
+$footer_background: #252525
+$flex:              flex
+/*Basic Styles*/
+body
+  margin: 0
+p
+  line-height: 1.5
+.Grid
+  display: $flex
+  flex-flow: row
+  flex-wrap: wrap
+.Grid-cell
+  flex: 1
+.Grid--gutters
+  margin-left: -$gutter
+  .Grid-cell
+    padding-left: $gutter
+  .Grid--nested
+    .Grid-cell:first-of-type
+      .Demo
+        margin-right: 1em
+.Grid--1of6 > .Grid-cell:nth-child(2)
+  flex: 0 0 20%
+.fixed
+  position: fixed !important
+  z-index: 9999
+.border-aside
+  padding: 25px
+  border: 1px solid $primary_color
+  background: rgba(255,255,255,0.4)
+.sticky
+  position: fixed
+  z-index: 101
+  margin-top: 50px
+.stop
+  position: relative
+  z-index: 101
+
+/*********main style******/
+header
+  background: $header-background
+  height: 40px
+  width: 100%
+  ul
+    margin: 0
+    padding: 0
+    display: $flex
+    align-items: center
+    justify-content: space-evenly
+    height: 100%
+    li
+      list-style: none
+    a
+      color: $primary_color
+      text-decoration: none
+      font-size: $font_size + 6px
+      text-transform: uppercase
+
+#wrapper
+  background: url("images/pages.jpg") no-repeat
+  background-size: cover
+  background-attachment: fixed
+  .substrate
+    background: rgba(0,0,0,0.6)
+    display: -webkit-box
+    display: -moz-box
+    display: -ms-flexbox
+    display: -webkit-flex
+    display: $flex
+    flex-flow: row wrap
+    padding: 50px 0
+    width: 100%
+    min-height: 800px
+
+    .Grid-cell
+      .border-aside
+        opacity: 0
+        height: 0
+        p
+          font-size: $font_size + 6px
+        .image01
+          text-align: center
+          img
+            width: 50%
+
+    .main
+      .page-descriptors
+        width: 100%
+        clear: both
+        overflow: hidden
+        p
+          margin: 0
+          width: 75%
+          float: right
+          font-size: $font_size + 8px
+          color: $primary_color
+
+
+footer
+  background: $footer_background
+  color: $primary_color
+  padding: 15px 0
+
+  .Grid-cell
+    p
+      text-align: center
+    img
+      width: 50%
+
+@media (max-width: 991px)
+
+
+/* Tablet (medium) screens */
+@media (min-width: 30em)
+  .Grid--holly-grail
+    .aside
+      flex: 1 calc(25% - #{$gutter})
+  .Grid--1of2 > .Grid-cell
+    flex: 0 0 50%
+  .Grid--1of6 > .Grid-cell:nth-child(2)
+    flex: 0 0 30%
+
+
+/* Large screens */
+@media (min-width: 48em)
+  .Grid--holly-grail
+    .main
+      flex: 2
+      margin-left: 15px
+    .aside
+      flex: 1
+      position: relative
+    .aside-1
+      order: 1
+    .main
+      order: 2
+    .aside-2
+      order: 3
+
+@media (max-width: 991px)
+  .Grid--holly-grail .main
+    order: 4
+
+@media (max-width: 600px)
+  .Grid--holly-grail .aside
+    flex: 1 calc(100% - 15px)
+  #wrapper .substrate
+    padding: 50px 15px 50px 30px
